@@ -10,19 +10,19 @@ if s1 > s2:
     a1 = a1 + 1
 elif s1 < s2:
     a2 = a2 + 1
-else: 
+else:{}
 
 if s2 > s3:
     a2 = a2 + 1
 elif s2 < s3:
     a3 = a3 + 1
-else:
+else:{}
 
 if s1 > s3:
     a1 = a1 + 1
 elif s1 < s3:
     a3 = a3 + 1
-else:
+else:{}
 
 if a1 == 0:
     print("min:"+s1)
