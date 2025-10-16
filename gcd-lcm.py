@@ -1,3 +1,6 @@
+#only gcd because im lazy, and i know i could just start from one of#
+#the 2 numbers and test each number and find the first that mod a and b is 0#
+
 def fact(s1):
     d = 2
     e = 0
