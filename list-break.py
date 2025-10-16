@@ -1,3 +1,5 @@
+#i know this could've done in an easier way ;-;#
+
 def l_brk(a):
     a = str(a)
     n = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
