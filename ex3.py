@@ -1,3 +1,5 @@
+#i think that there is an easier way but i dont know#
+
 s1 = input()
 s2 = input()
 s3 = input()
