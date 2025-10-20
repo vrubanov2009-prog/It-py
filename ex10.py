@@ -35,6 +35,8 @@ def spiral(h, a):
             vd = (vd + 1)%4
             if outp[csum(cp, cd[vd])[0]][csum(cp, cd[vd])[1]] == a:
                 cv = 1
+            elif outp[csum(cp, md[vd])[0]][csum(cp, md[vd])[1]] == a:
+                break
             else:
                 {}
         else:
@@ -43,4 +45,4 @@ def spiral(h, a):
     for i in range(len(outp)):
         print(*outp[i])
 
-spiral(17, "#")
+spiral(16, "#")
