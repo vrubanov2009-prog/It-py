@@ -10,4 +10,4 @@ def xnplus(h, a):
                 print(" ", end = " ")
         print("")
 
-xnplus(11, "#")
+xnplus(9, "#")
