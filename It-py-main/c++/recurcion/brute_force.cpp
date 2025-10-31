@@ -25,20 +25,21 @@ void cout_vec(const vector<string>& s) {
     int l = s[k - 1].size();
     int v = 0;
     for (int i = 0; i < k; i = i + 1) {
-        v = v + 3 + l;
-        if (v > 79) {
-            cout << endl;
-            v = 0;
-        }
         for (int j = 0; j < l - s[i].size(); j = j + 1) {
             cout << " ";
         }
         cout << s[i] << " | ";
+        
+        v = v + 3 + l;
+        if (v > 80) {
+            cout << endl;
+            v = 0;
+        }
     }
 }
 
 int main() {
-    cout_vec(brt_forc(6, {"0", "1"}));
+    cout_vec(brt_forc(4, {"0", "1"}));
     cout << endl;
     return 0;
 }
