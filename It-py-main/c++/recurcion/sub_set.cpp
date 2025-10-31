@@ -4,21 +4,15 @@
 
 using namespace std;
 
-vector<string> sub_set(const string& s,int k = -1) {
-    if (k == -1) {k = s.size() - 1;}
-    
-    if (k == 0) {return {""};}
-    
-    string vs = s;
-    
-    for (int i = 0; i < k - 1; i = i + 1) {
-        vs.pop_back();
-    }
-    
-    vector<string> prev = sub_set(vs);
-    vector<string> res = prev;
-    for (int i = 0; i < prev.size(); i = i + 1) {
-        res.push_back(prev[i] + s[k]);
+vector<string> sub_set(const string& s) {
+    if (s.empty()) {return {""};}
+    string vs = "";
+    vs = s.substr(0, s.size() - 1);
+    vector<string> res;
+    res = sub_set(vs);
+    int vss = res.size();
+    for (int j = 0; j < vss; j = j + 1) {
+        res.push_back(res[j] + s.back());
     }
     return res;
 }
@@ -42,6 +36,6 @@ void cout_vec(const vector<string>& s) {
 }
 
 int main() {
-    cout_vec(sub_set("abc"));
+    cout_vec(sub_set("abcdefghij"));
     return 0;
 }
