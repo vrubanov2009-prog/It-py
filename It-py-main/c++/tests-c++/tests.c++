@@ -1,23 +1,51 @@
 #include <iostream>
 #include <vector>
+#include <string>
 
 using namespace std;
 
-int block(int h, string a) {
-    int v1 = (h + 1) / 2;
+int f(int x) {
+    return -x;
+}
+
+vector<vector<int>> grafic(int h, vector<int> c = {-1}) {
+    if (c[0] == -1) {c = {(h + 1) / 2, (h + 1) / 2};}
+    vector<vector<int>> res(h, vector<int>(h, 0));
+    int fx;
+    if (h - c[1] >= 0 and h - c[1] < h) {res[h - c[1]] = vector<int>(h, 2);}
+    for (int i = 0; i < h; i = i + 1) {
+        res[i][c[0] - 1] = 2;
+    }
+
+    for (int i = 0; i < h; i = i + 1) {
+        fx = (h - 1 - f(i - c[0])) - c[1];
+        if (fx >= 0 and fx <= h - 1) {res[fx][i] = 1;}
+    }
+
+    return res;
+}
+
+void print(const vector<vector<int>>& matrix, char a, char b) {
+    int h = matrix.size();
     for (int i = 0; i < h; i = i + 1) {
         for (int j = 0; j < h; j = j + 1) {
-            if ((abs(i - v1) % 2 == v1 % 2 or abs(j - v1) % 2 == v1 % 2)) {
-                cout << a + " ";
+            if (matrix[i][j] == 1) {
+                cout << a << " ";
             }
             else {
-                cout << "  ";
+                if (matrix[i][j] == 2) {
+                    cout << b << " ";
+                }
+                else {
+                    cout << "  ";
+                }
             }
         }
         cout << endl;
     }
-    return 0;
 }
- int main() {
-    block(10, "#");
+
+int main() {
+    print(grafic(11), '@', '#');
+    return 0;
 }
